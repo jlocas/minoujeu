@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 466ee9a6f124bd142b7c76b4fa8b1412
+guid: 5ff431fd346c9554284e16634dfa6d1b
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -7,8 +7,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Icosphere
-    7400000: Default Take
+    4300000: Grid
     9500000: //RootNode
   materials:
     importMaterials: 1
