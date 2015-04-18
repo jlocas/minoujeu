@@ -16,9 +16,19 @@ public class Mouse : MonoBehaviour {
 	private Quaternion targetRotation;
 	private Vector3 tempPosition;
 
+	public int id = 0;
+	public GameObject target;
+
+	private float spawnTime;
+	private float huntDist;
+	private Vector3 spawnPos;
+
 	// Use this for initialization
 	void Start () {
 		sound = GameObject.Find("OSCManager").GetComponent<OSCSender>();
+		spawnTime = Time.time;
+		spawnPos = gameObject.transform.position;
+		huntDist = Vector3.Distance(spawnPos, target.transform.position);
 	
 	}
 	
@@ -57,7 +67,10 @@ public class Mouse : MonoBehaviour {
 			MoveRight ();
 		}
 
-
+		float huntProgress = (Time.time - spawnTime) * speed;
+		float huntFract = huntProgress / huntDist;
+		gameObject.transform.position = Vector3.Lerp(spawnPos, target.transform.position, huntFract);
+		/*
 		if (gameObject.transform.position.x < leftLimit){
 			isGoingLeft = false;
 			isTurning = true;
@@ -70,8 +83,7 @@ public class Mouse : MonoBehaviour {
 			isTurning = true;
 			tempPosition = new Vector3(rightLimit, gameObject.transform.position.y, gameObject.transform.position.z);
 			gameObject.transform.position = tempPosition;
-		}
-
+		}*/
 	}
 
 	void MoveRight(){

@@ -2,19 +2,19 @@ Initialize engine version: 4.6.1f1 (d1db7a1b5196)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 760 (ID=0x1187)
+    Renderer: NVIDIA GeForce GTX 670 (ID=0x1189)
     Vendor:   NVIDIA
     VRAM:     1990 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: E:\Projects\Games\Minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading E:\Projects\Games\Minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: E:\Projects\Games\Minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading E:\Projects\Games\Minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: E:\Projects\Games\Minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading E:\Projects\Games\Minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.238 seconds
+Platform assembly: G:\minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading G:\minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: G:\minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading G:\minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: G:\minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading G:\minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.399 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: E:\Projects\Games\Minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: E:\Projects\Games\Minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\System.dll (this message is harmless)
+Platform assembly: G:\minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: G:\minoujeu\Builds\Windows\Windows_04-03-2015_Data\Managed\System.dll (this message is harmless)
