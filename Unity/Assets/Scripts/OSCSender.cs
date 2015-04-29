@@ -5,6 +5,7 @@ public class OSCSender : MonoBehaviour {
 
 	public void MouseSqueak(){
 		OSCHandler.Instance.SendMessageToClient("Pyo", "/mj/mouse/squeak", 1);
+		OSCHandler.Instance.SendMessageToClient("Pyo", "/mj/mouse/squeak", 0);
 	}
 
 
@@ -17,9 +18,6 @@ public class OSCSender : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//OSCHandler.Instance.SendMessageToClient("Pyo", "/test/test", "allo pyo");
-
-
 	
 	}
 }

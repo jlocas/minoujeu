@@ -62,7 +62,7 @@
      <Compile Include="Assets\Scripts\OSCSender.cs" />
      <Compile Include="Assets\Scripts\Sapin.cs" />
      <Compile Include="Assets\Scripts\TheSpawneroon.cs" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <Compile Include="Assets\Scripts\oldMouse.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Programs/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

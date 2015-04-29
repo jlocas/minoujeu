@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Cheese : MonoBehaviour {
-	
+	OSCSender sound;
 	public Vector3 initScale = new Vector3(0.1f,0.1f,0.1f);
 	public Vector3 targetScale = new Vector3(50,50,50);
 	public float ripenSpeed = 1;
@@ -20,6 +20,7 @@ public class Cheese : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		sound = GameObject.Find("OSCManager").GetComponent<OSCSender>();
 		gameObject.transform.localScale = initScale;
 		spawnTime = Time.time;
 		scaleDifference = Vector3.Distance(initScale, targetScale);
