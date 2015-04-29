@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mouse : MonoBehaviour {
+public class Mouse1 : MonoBehaviour {
 	OSCSender sound;
 	public LevelController lvl;
 
@@ -73,11 +73,11 @@ public class Mouse : MonoBehaviour {
 				return;
 			}
 			else{
-				if(!gotCheese){
-					MoveInit(targetCheese);
-				} else {
-					MoveInit(spawnPoint);
-				}
+				initTime = Time.time;
+				speed = speedMin;
+				initPos = gameObject.transform.position;
+				initPosMouth = gameObject.transform.FindChild("MouseMouth").gameObject.transform.position;
+				moveDist = Vector3.Distance(initPos, targetCheese.transform.position);
 				pause = false;
 			}
 		}
@@ -86,6 +86,7 @@ public class Mouse : MonoBehaviour {
 			if (Vector3.Distance(gameObject.transform.FindChild("MouseMouth").position, targetCheese.transform.position) <= 0.2){
 				gotCheese = true;
 				targetCheese.GetComponent<Cheese>().Anchor(gameObject.transform.FindChild("MouseMouth").gameObject);
+				speed = speedMin;
 			}
 		}
 		else {
@@ -104,23 +105,18 @@ public class Mouse : MonoBehaviour {
 	void MoveToHome(){
 		if(isGoingLeft){
 			isTurning = true;
+		} else if (!isTurning && !isGoingHome) {
+			initTime = Time.time;
+			initPos = gameObject.transform.position;
+			initPosMouth = gameObject.transform.FindChild("MouseMouth").gameObject.transform.position;
+			isGoingHome = true;
+			moveDist = Vector3.Distance(initPos, spawnPoint.transform.position);
 		} else if (!isTurning){
 			MoveToTarget(spawnPoint);
 		}
 	}
 
-	void MoveInit(GameObject target){
-		initTime = Time.time;
-		initPos = gameObject.transform.position;
-		initPosMouth = gameObject.transform.FindChild("MouseMouth").gameObject.transform.position;
-		moveDist = Vector3.Distance(initPos, target.transform.position);
-		speed = speedMin;
-
-	}
-
 	void MoveToTarget(GameObject target){
-
-
 		if (speed < speedMax){
 			float t = (Time.time - initTime) * acceleration / (speedMax-speedMin);
 			speed = Mathf.Lerp(speedMin, speedMax, t);

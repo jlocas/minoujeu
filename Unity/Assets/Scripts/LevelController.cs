@@ -7,10 +7,9 @@ public class LevelController : MonoBehaviour {
 
 	public GameObject[] cheeseSpawnPoints;
 	public GameObject cheesePrefab;
-	private Object newCheese;
-	private GameObject tempCheese;
+	private GameObject newCheese;
 	private GameObject targetCheese;
-	public List<Object> allCheeses;
+
 	public float cheeseFrequency;
 	public float cheeseTimer = 0.0f;
 	public int cheeseCount = 0;
@@ -19,12 +18,9 @@ public class LevelController : MonoBehaviour {
 
 	public GameObject mouseSpawnPoint;
 	public GameObject mousePrefab;
-	public Object newMouse;
-	public GameObject tempMouse;
-	public List<Object> allMice;
+	public GameObject newMouse;
 
 	private int spawnPoint;
-	private int idCount = 1;
 
 
 	// Use this for initialization
@@ -42,59 +38,25 @@ public class LevelController : MonoBehaviour {
 				cheeseTimer = 0.0f;
 				cheeseCount += 1;
 				cheeseOld = spawnPoint;
-				SpawnCheese(idCount);
-				SpawnMouse(idCount);
-				tempMouse.GetComponent<Mouse>().target = tempCheese;
-				idCount += 1 % (cheeseMax + 1);
+				SpawnCheese();
+				SpawnMouse();
+				newMouse.GetComponent<Mouse>().targetCheese = newCheese;
 			}
 		}
 
 
 
-	}
-
-	void SpawnCheese(int id){
-
-		newCheese = Instantiate (cheesePrefab, cheeseSpawnPoints[spawnPoint].transform.position, Random.rotation);
-		allCheeses.Add(newCheese);
-		tempCheese = (GameObject)allCheeses[allCheeses.Count-1];
-		tempCheese.GetComponent<Cheese>().id = id;
-
-	}
-	
-
-	/*bool FindCheese(){
-		findTimer += Time.deltaTime;
-		if (findTimer >= findFrequency){
-			findTimer = 0;
-			foreach(GameObject cheese in allCheeses){
-				if (cheese.GetComponent<Cheese>().isReady == true && cheese.GetComponent<Cheese>().isClaimed == false){
-					cheese.GetComponent<Cheese>().isClaimed = true;
-					Debug.Log("Cheese found. Mouse on the Hunt. Beware, cheese. You cannot run, cheese.");
-					targetCheese = cheese;
-					return true;
-				}
-			}
-		}
-		return false;
-	}*/
-
-	void SpawnMouse(int id){
-
-		newMouse = Instantiate (mousePrefab, mouseSpawnPoint.transform.position, Quaternion.identity);
-		allMice.Add(newMouse);
-		tempMouse = (GameObject)allMice[allMice.Count-1];
-		tempMouse.GetComponent<Mouse>().id = id;
-
 
 	}
 
-	void DespawnCheese(int id){
+	void SpawnCheese(){
 
-		allCheeses.Remove((GameObject)allCheeses[id]);
+		newCheese = (GameObject)Instantiate (cheesePrefab, cheeseSpawnPoints[spawnPoint].transform.position, Random.rotation);
 	}
 
-	void DespawnMouse(int id){
 
+	void SpawnMouse(){
+
+		newMouse = (GameObject)Instantiate (mousePrefab, mouseSpawnPoint.transform.position, Quaternion.identity);
 	}
 }

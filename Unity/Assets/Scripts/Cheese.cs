@@ -9,9 +9,12 @@ public class Cheese : MonoBehaviour {
 	private float spawnTime;
 	private float scaleDifference;
 	public bool isReady = false;
-	//public bool isClaimed = false;
+	float rdyTimer = 0.0f;
+	float[] rdyDelay = new float[2]{3, 6};
+	float rdyTime = 4.0f;
 
-	public int id = 0;
+	public bool isAnchored = false;
+	public GameObject anchor;
 
 
 
@@ -20,6 +23,7 @@ public class Cheese : MonoBehaviour {
 		gameObject.transform.localScale = initScale;
 		spawnTime = Time.time;
 		scaleDifference = Vector3.Distance(initScale, targetScale);
+		rdyTime = Random.Range(rdyDelay[0], rdyDelay[1]);
 	
 	}
 	
@@ -27,8 +31,17 @@ public class Cheese : MonoBehaviour {
 	void Update () {
 		if (!Ripe()){
 			Ripen ();	
-		} else {
-			Fall ();
+		} else if (gameObject.GetComponent<Rigidbody>().useGravity != true){
+			gameObject.GetComponent<Rigidbody>().useGravity = true;
+		} else if (isReady != true){
+			rdyTimer += Time.deltaTime;
+			if(rdyTimer >= rdyTime){
+				isReady = true;
+			}
+		}
+
+		if(isAnchored){
+			gameObject.transform.position = anchor.transform.position;
 		}
 
 	}
@@ -40,10 +53,6 @@ public class Cheese : MonoBehaviour {
 
 	}
 
-	void Fall(){
-		gameObject.GetComponent<Rigidbody>().useGravity = true;
-		isReady = true;
-	}
 
 	public bool Ripe(){
 		if(gameObject.transform.localScale == targetScale){
@@ -51,6 +60,12 @@ public class Cheese : MonoBehaviour {
 		} else {
 			return false;
 		}
+	}
+
+	public void Anchor(GameObject anchorer){
+		anchor = anchorer;
+		isAnchored = true;
+		gameObject.GetComponent<MeshCollider>().enabled = false;
 	}
 
 }
