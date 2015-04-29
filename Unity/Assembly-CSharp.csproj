@@ -54,9 +54,11 @@
      <Compile Include="Assets\OSC\OSCHandler.cs" />
      <Compile Include="Assets\OSC\tests\oscControl.cs" />
      <Compile Include="Assets\Scripts\Bird.cs" />
+     <Compile Include="Assets\Scripts\Bush.cs" />
      <Compile Include="Assets\Scripts\Cheese.cs" />
      <Compile Include="Assets\Scripts\LevelController.cs" />
      <Compile Include="Assets\Scripts\Mouse.cs" />
+     <Compile Include="Assets\Scripts\Mouse1.cs" />
      <Compile Include="Assets\Scripts\OSCSender.cs" />
      <Compile Include="Assets\Scripts\Sapin.cs" />
      <Compile Include="Assets\Scripts\TheSpawneroon.cs" />
