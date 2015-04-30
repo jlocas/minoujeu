@@ -33,9 +33,6 @@ public class Mouse : MonoBehaviour {
 	bool startTrigger = false;
 	
 
-
-
-
 	// Use this for initialization
 	void Start () {
 		lvl = GameObject.Find("Controls").GetComponent<LevelController>();
@@ -118,7 +115,7 @@ public class Mouse : MonoBehaviour {
 		pauseStart = Time.time;
 
 		if (Random.value <= chanceToGoFaster){
-			//chance to add 1-3 speed after a stop
+			//chance to add speed after a stop
 			GoFaster(1, 4);
 		}
 	}

@@ -1,13 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Mouse.cs">
     <Files>
-      <File FileName="Assets\Scripts\Mouse.cs" Line="33" Column="2" />
-      <File FileName="Assets\Scripts\LevelController.cs" Line="43" Column="1" />
-      <File FileName="Assets\Scripts\oldMouse.cs" Line="54" Column="6" />
-      <File FileName="Assets\Scripts\Cheese.cs" Line="59" Column="54" />
-      <File FileName="Assets\Scripts\Bush.cs" Line="22" Column="24" />
-      <File FileName="Assets\Scripts\OSCSender.cs" Line="8" Column="71" />
+      <File FileName="Assets\Scripts\Mouse.cs" Line="24" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
